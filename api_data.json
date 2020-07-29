@@ -5,6 +5,23 @@
     "title": "Search properties for sale.",
     "name": "GetProperties",
     "group": "Property",
+    "examples": [
+      {
+        "title": "RENT:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Worli&p_type=Residential Apartment&u_price=1627000000&l_price=100&bhk_type=3 BHK&page=1&limit=10&sale_type=rent",
+        "type": "curl"
+      },
+      {
+        "title": "SALE:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Nahur&p_type=Studio Apartment&u_price=1627000000&l_price=100&bhk_type=1 BHK&page=1&limit=10&sale_type=sale",
+        "type": "curl"
+      },
+      {
+        "title": "PG:",
+        "content": "https://myjdapi.justdial.com/real_estate/real_estate/properties/search?city=Delhi&locality=Noida Sector 58&u_price=1627000000&l_price=100&page=1&limit=10&sale_type=pg",
+        "type": "curl"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -158,41 +175,6 @@
           },
           {
             "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "results.data._id",
-            "description": "<p>Properties id.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "results.data.location",
-            "description": "<p>Location points.LONG-FIRST,LAT.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "results.data.s_name",
-            "description": "<p>Society name.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "results.data.p_locality",
-            "description": "<p>Locality name.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "results.data.bhk_type",
-            "description": "<p>Property type.</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Object",
             "optional": false,
             "field": "errors",
@@ -217,7 +199,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n     \"results\": {\n         \"data\":[{\n           \"_id\": \"5f13d7b4299bf404e1ca83d6\",\n           \"location\": {\n               \"type\": \"Point\",\n               \"coordinates\": [\n                   72.947149,\n                   19.159949\n               ]\n           },\n           \"s_name\": \"Atmosphere\",\n           \"p_locality\": \"Nahur\",\n           \"bhk_type\": \"2 BHK\",\n           \"book_pri_min\": 16700000,\n           \"book_pri_max\": 16700000,\n           \"p_area\": 1500,\n           \"p_area_unit\": \"sq.ft\",\n           \"p_type\": \"Residential Apartment\"\n       }],\n     },\n     \"errors\": {\n         \"code\": 0,\n         \"msg\": \"success\"\n     }\n }",
+          "content": "HTTP/1.1 200 OK\n{\n    \"results\": {\n        \"data\": [\n            {\n                \"properties\": {\n                    \"l1\": \"1.62 Cr\",\n                    \"l2\": \"1 BHK Studio Apartment \",\n                    \"l3\": \"Atmosphere Nahur\",\n                    \"l4\": \"1500 sqft \"\n                },\n                \"imgs\": [],\n                \"jd_comp_info\": {},\n                \"pr_id\": \"5f13d7b4299bf404e1ca83d5\"\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -239,7 +221,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n     \"statusCode\": 404,\n     \"status\": \"error\",\n     \"message\": \"Url not found\"\n}",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -251,6 +233,13 @@
     "title": "Request Properties Count",
     "name": "GetPropertyCount",
     "group": "Property",
+    "examples": [
+      {
+        "title": "Count:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/count?sale_type=sale&city=Mumbai&locality=Nahur&u_price=16700000&l_price=15700000&p_type=Residential%20Apartment",
+        "type": "curl"
+      }
+    ],
     "parameter": {
       "fields": {
         "Parameter": [
@@ -377,7 +366,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n     \"statusCode\": 404,\n     \"status\": \"error\",\n     \"message\": \"Url not found\"\n}",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -386,7 +375,7 @@
   {
     "type": "get",
     "url": "/properties",
-    "title": "Property details for sale and rent.",
+    "title": "Property details for sale and rent and pg.",
     "name": "GetPropertyDetails",
     "group": "Property",
     "parameter": {
@@ -405,12 +394,29 @@
             "type": "String",
             "optional": false,
             "field": "sale_type",
-            "defaultValue": "sale|rent",
+            "defaultValue": "sale|rent|pg",
             "description": "<p>Property that looking for.</p>"
           }
         ]
       }
     },
+    "examples": [
+      {
+        "title": "PG:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f11bb52696c9f731143bba5&sale_type=pg",
+        "type": "curl"
+      },
+      {
+        "title": "SALE:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f13d7b4299bf404e1ca83d5&sale_type=sale",
+        "type": "curl"
+      },
+      {
+        "title": "RENT:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f11c699e8cca076d40914ae&sale_type=rent",
+        "type": "curl"
+      }
+    ],
     "success": {
       "fields": {
         "Success 200": [
@@ -467,8 +473,13 @@
       },
       "examples": [
         {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK rent\n{\n   \"results\":{\n         \"data\":\n [\n     {\n       \"s_amen\": [],\n       \"p_amen\": [\n           \"3 Wardrobe\",\n           \"4 Fan\",\n           \"1 Exhaust Fan\",\n           \"9 Light\",\n           \"1 Modular Kitchen\",\n           \"4 AC\"\n       ],\n       \"_id\": \"5f11c699e8cca076d40914ae\",\n       \"p_type\": \"Residential Apartment\",\n       \"bhk_type\": \"3 BHK\",\n       \"bath_rm_num\": 3,\n       \"balcony_num\": 0,\n       \"furn_type\": \"Semifurnished\",\n       \"open_park\": 0,\n       \"p_tnt_type\": [\n           \"Family Only\"\n       ],\n       \"avail_frm\": \"2020-07-17T15:39:45.575Z\",\n       \"rent_pri\": 100000,\n       \"p_deposit\": 300000,\n       \"p_main\": null,\n       \"p_brokerage\": 100000,\n       \"p_area\": 1000,\n       \"p_locality\": \"Worli\",\n       \"p_no_flr\": 10,\n       \"p_total_flr\": 41,\n       \"p_age\": \"Wed Jun 17 2020 21:09:45 GMT+0530 (India Standard Time)\",\n       \"posted_on\": \"2020-06-25T18:30:00.000Z\"\n     }\n ]\n },\n  \"errors\": {\n         \"code\": 0,\n         \"msg\": \"success\"\n   }\n}\nHTTP/1.1 200 OK sale\n{\n    \"location\": [],\n    \"_id\": \"5f13d7b4299bf404e1ca83d5\",\n    \"s_name\": \"Atmosphere\",\n    \"p_locality\": \"Nahur\",\n    \"bhk_type\": \"1 BHK\",\n    \"apt_inclusion\": \"1 Bedroom 1 Bathroom\",\n    \"book_pri_min\": 16200000,\n    \"book_pri_max\": 16200000,\n    \"p_area\": 1500,\n    \"p_area_unit\": \"sq.ft\",\n    \"p_total_flr\": 45,\n    \"p_flr_type\": \"Others\",\n    \"avail_frm\": \"2020-07-19T05:18:25.070Z\",\n    \"p_type\": \"Studio Apartment\",\n    \"p_main\": 2000\n}",
+          "title": "RENT:",
+          "content": "HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": {\n            \"properties\": {\n                \"l1\": \"100000\",\n                \"l2\": \"3 BHK Residential Apartment \",\n                \"l3\": \"Lodha The Park Worli\",\n                \"l4\": \"1000 sqft Semifurnished\"\n            },\n            \"imgs\": [\n                \"https://newprojects.99acres.com/projects/lodha_group/the_park/images/o9lm9ffc.jpg\",\n                \"https://newprojects.99acres.com/projects/lodha_group/the_park/images/53c533mq.jpg\",\n                \"https://newprojects.99acres.com/projects/lodha_group/the_park/images/olhk2wvv.jpg\",\n                \"htt\"\n            ],\n            \"jd_comp_info\": {},\n            \"pr_id\": \"5f11c699e8cca076d40914ae\",\n            \"sections\": {\n                \"1\": {\n                    \"header\": \"Overview\",\n                    \"spec\": {\n                        \"Project Name\": \"Lodha The Park\",\n                        \"Available From\": \"7th July 2020\",\n                        \"Bathrooms\": \"3\",\n                        \"Floor no\": \"10 of 41\",\n                        \"Furnishing\": \"Semifurnished\",\n                        \"Tenant Type\": \"Family Only\"\n                    },\n                    \"type\": \"1\"\n                },\n                \"2\": {\n                    \"header\": \"Rent Details\",\n                    \"spec\": {\n                        \"Rent\": \"Rs 100000\",\n                        \"Security Deposit\": \"Rs 300000\",\n                        \"Maintanance\": \"Rs -\",\n                        \"Brockerage\": \"Rs 100000\"\n                    },\n                    \"type\": \"1\"\n                },\n                \"3\": {\n                    \"header\": \"Additional Details\",\n                    \"spec\": {\n                        \"Posted on\": \"6th June 2020\",\n                        \"Last updated \": \"-\",\n                        \"Balconies\": \"0\",\n                        \"Age of building\": \"0 to 1 Year Old\",\n                        \"Parking\": \"0\"\n                    },\n                    \"type\": \"1\"\n                },\n                \"4\": {\n                    \"header\": \"Amenities\",\n                    \"spec\": [],\n                    \"type\": \"3\"\n                },\n                \"5\": {\n                    \"header\": \"Explore Neighbourhood\",\n                    \"spec\": {\n                        \"HealthCare\": {\n                            \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n                            \"api\": \"https://<category search api>\"\n                        },\n                        \"Banks\": {\n                            \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n                            \"api\": \"https://<category search api>\"\n                        },\n                        \"Parks\": {\n                            \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n                            \"api\": \"https://<category search api>\"\n                        }\n                    },\n                    \"type\": \"5\"\n                },\n                \"6\": {\n                    \"header\": \"About the Property\",\n                    \"spec\": \"Lodha the park, south mumbai's most sought after development, is a 17 acre gated community complex with a 7 acre private park set 70 feet above the ground. Lavish residence with large sized rooms, full-Height floor to ceiling windows to maximise light & v\",\n                    \"type\": 9\n                },\n                \"7\": {\n                    \"header\": \"Rent-o-Meter\",\n                    \"spec\": {\n                        \"min\": 98000,\n                        \"max\": 102000,\n                        \"value\": 100000\n                    },\n                    \"type\": \"10\"\n                },\n                \"8\": {\n                    \"header\": \"Contact Agent\",\n                    \"api\": \"https://<API to post data>\",\n                    \"type\": \"7\"\n                },\n                \"9\": {\n                    \"header\": \"\\\"Similar Properties to 3 BHK Rentals\",\n                    \"api\": \"https://myjdapi.justdial.com/real_estate/properties/search\",\n                    \"type\": \"8\"\n                }\n            },\n            \"location\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    72.828829,\n                    19.006108\n                ]\n            }\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        },
+        {
+          "title": "PG:",
+          "content": "HTTP/1.1 200 OK sale\n{\n  \"results\": {\n    \"data\": {\n      \"properties\": {\n        \"l1\": \"Zolostays Dealer PG\",\n        \"l2\": \"- Noida Sector 58\",\n        \"l3\": \"5299 / bed\",\n        \"l4\": [\"Shared Room\"]\n      },\n      \"imgs\": [\n        \"https://mediacdn.99acres.com/media1/11315/1/226301662O-1584510184612.jpeg\",\n        \"https://mediacdn.99acres.com/media1/11315/1/226301664O-1584510185168.jpeg\",\n        \"https://mediacdn.99acres.com/media1/11315/1/226301660O-1584510184358.jpeg\",\n        \"https://mediacdn.99acres.co\"\n      ],\n      \"jd_comp_info\": {},\n      \"pr_id\": \"5f11bb52696c9f731143bba5\",\n      \"gender\": [\"Girls\", \"Boys\"],\n      \"sections\": {\n        \"1\": {\n          \"header\": \"Overview\",\n          \"spec\": {\n            \"Total Beds\": \"2\",\n            \"Notice Period\": \"NA Days\",\n            \"Parking\": \"NA\"\n          },\n          \"type\": \"1\"\n        },\n        \"2\": {\n          \"header\": \"Room Offering\",\n          \"spec\": {\n            \"Rent\": \"Rs 5299 / bed\",\n            \"Security Deposit\": \"Rs 5299\"\n          },\n          \"type\": \"1\"\n        },\n        \"3\": {\n          \"header\": \"Additional Details\",\n          \"spec\": [\n            \"1 Bed\",\n            \"1 Wardrobe\",\n            \"1 Fan\",\n            \"1 Geyser\",\n            \"1 Light\",\n            \"1 Curtains\",\n            \"1 TV\",\n            \"\"\n          ],\n          \"type\": \"2\"\n        },\n        \"4\": {\n          \"header\": \"Top Furnishing\",\n          \"spec\": [\n            \"1 Water Purifier\",\n            \"1 Fridge\",\n            \"1 Sofa\",\n            \"1 Microwave\",\n            \"1 Washing Machine\"\n          ],\n          \"type\": \"2\"\n        },\n        \"5\": {\n          \"header\": \"Amenities\",\n          \"spec\": [\n            {\n              \"Water purifier\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            },\n            {\n              \"Security / Fire Alarm\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            },\n            {\n              \"Internet/wi-fi connectivity\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            },\n            {\n              \"Water Storage\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            },\n            {\n              \"Security Personnel\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            },\n            {\n              \"Maintenance Staff\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_tempotravellers_2x.png\"\n            }\n          ],\n          \"type\": \"3\"\n        },\n        \"6\": {\n          \"header\": \"House Rules\",\n          \"spec\": [\"Available for student & Working Professionals\"],\n          \"type\": \"4\"\n        },\n        \"7\": {\n          \"header\": \"Explore Neighbourhood\",\n          \"spec\": {\n            \"HealthCare\": {\n              \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n              \"api\": \"https://<category search api>\"\n            },\n            \"Banks\": {\n              \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n              \"api\": \"https://<category search api>\"\n            },\n            \"Parks\": {\n              \"icon\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/travel_hotels_2x.png\",\n              \"api\": \"https://<category search api>\"\n            }\n          },\n          \"type\": \"5\"\n        },\n        \"8\": {\n          \"header\": \"Contact Agent\",\n          \"api\": \"https://<API to post data>\",\n          \"type\": \"7\"\n        },\n        \"9\": {\n          \"header\": \"Similar Properties to PG\",\n          \"api\": \"https://myjdapi.justdial.com/real_estate/properties/search\",\n          \"type\": \"8\"\n        }\n      },\n      \"location\": {\n        \"type\": \"Point\",\n        \"coordinates\": [77.3597194, 28.6067511]\n      }\n    }\n  },\n  \"errors\": {\n    \"code\": 0,\n    \"msg\": \"success\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -490,7 +501,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n     \"statusCode\": 404,\n     \"status\": \"error\",\n     \"message\": \"Url not found\"\n}",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -524,6 +535,13 @@
         ]
       }
     },
+    "examples": [
+      {
+        "title": "sale:",
+        "content": "https://myjdapi.justdial.com//real_estate/properties/advance_filter?f_type=buy",
+        "type": "curl"
+      }
+    ],
     "success": {
       "fields": {
         "Success 200": [
@@ -589,7 +607,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n     \"statusCode\": 404,\n     \"status\": \"error\",\n     \"message\": \"Url not found\"\n}",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
           "type": "json"
         }
       ]
