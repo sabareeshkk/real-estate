@@ -1,6 +1,120 @@
 [
   {
     "type": "get",
+    "url": "/properties/builders",
+    "title": "get builders list.",
+    "name": "GetBuilders",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "RENT:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/builders?city=Mumbai&locality=Nahur&page=1&limit=10&sale_type=rent",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "defaultValue": "Mumbai",
+            "description": "<p>Name of the city.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "locality",
+            "defaultValue": "Nahur",
+            "description": "<p>Name of the locality.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sale_type",
+            "defaultValue": "sale|rent",
+            "description": "<p>Property that looking for.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "results",
+            "description": "<p>Response information.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "results.data",
+            "description": "<p>Response data.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": "<p>Error code and message.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "errors.code",
+            "description": "<p>Error code.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errors.msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"results\": {\n        \"data\": [\n            {\n                \"l3\": \"2/2 projects completed\",\n                \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/j3/022pxx22.xx22.110521132245.g1j3/catalogue/r-s-property-mumbai-f0a425ubv1.jpg\",\n                \"l2\": \"R S Property\"\n            },\n            {\n                \"l3\": \"2/2 projects completed\",\n                \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/n4/022pxx22.xx22.151029122548.j9n4/catalogue/vkm-property-consultant-mumbai-32qgqk7alu.jpg?clr=#4d4d1a\",\n                \"l2\": \"VKM Property Consultant\"\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UrlNotFound",
+            "description": "<p>Url not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
     "url": "/properties/search",
     "title": "Search properties for sale.",
     "name": "GetProperties",
