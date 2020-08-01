@@ -115,6 +115,112 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/properties/home",
+    "title": "get home page data.",
+    "name": "GetHome",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "HOME:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/home?city=Mumbai&locality=Nahur",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "defaultValue": "Mumbai",
+            "description": "<p>Name of the city.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "locality",
+            "defaultValue": "Nahur",
+            "description": "<p>Name of the locality.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "results",
+            "description": "<p>Response information.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "results.data",
+            "description": "<p>Response data.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": "<p>Error code and message.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "errors.code",
+            "description": "<p>Error code.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errors.msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n    \"results\": {\n        \"data\": {\n            \"sections\": [\n                {\n                    \"header\": \"TRENDING PROJECTS\",\n                    \"data\": [\n                        {\n                            \"properties\": {\n                                \"l1\": \"4.18 Cr\",\n                                \"l2\": \"4 BHK Independent House/Villa \",\n                                \"l3\": \"Runwal Greens Nahur\",\n                                \"l4\": \"1500 sqft \"\n                            },\n                            \"imgs\": [],\n                            \"jd_comp_info\": {\n                                \"docid\": \"022P5508061\",\n                                \"cmpname\": \"360 Degrees Real Estate Services\",\n                                \"d_img\": \"https://images.jdmagicbox.com/def_content/estate_agents_for_residence/default-estate-agents-for-residence-0.jpg?clr=#422424\",\n                                \"d_rating\": \"3.1\",\n                                \"d_web_review\": \"7\",\n                                \"d_numbers\": [\n                                    \"+(91)-9820093893\",\n                                    \"+(91)-22-26482815\",\n                                    \"+(91)-022-65550360\"\n                                ],\n                                \"trusted\": 0,\n                                \"verified\": 0\n                            },\n                            \"s_name\": \"Runwal Greens\",\n                            \"pr_id\": \"5f13d7b5299bf404e1ca90ac\"\n                        }\n                    ],\n                    \"type\": \"13\"\n                },\n                {\n                    \"header\": \"PROPERTIES FOR SALE IN Nahur\",\n                    \"data\": [\n                        {\n                            \"properties\": {\n                                \"l1\": \"1.62 Cr\",\n                                \"l2\": \"1 BHK Studio Apartment \",\n                                \"l3\": \"Atmosphere Nahur\",\n                                \"l4\": \"1500 sqft \"\n                            },\n                            \"imgs\": [],\n                            \"jd_comp_info\": {\n                                \"docid\": \"022P5508061\",\n                                \"cmpname\": \"360 Degrees Real Estate Services\",\n                                \"d_img\": \"https://images.jdmagicbox.com/def_content/estate_agents_for_residence/default-estate-agents-for-residence-0.jpg?clr=#422424\",\n                                \"d_rating\": \"3.1\",\n                                \"d_web_review\": \"7\",\n                                \"d_numbers\": [\n                                    \"+(91)-9820093893\",\n                                    \"+(91)-22-26482815\",\n                                    \"+(91)-022-65550360\"\n                                ],\n                                \"trusted\": 0,\n                                \"verified\": 0\n                            },\n                            \"s_name\": \"Atmosphere\",\n                            \"pr_id\": \"5f13d7b4299bf404e1ca83d5\"\n                        }\n                    ],\n                    \"type\": \"13\"\n                },\n                {\n                    \"header\": \"PROPERTIES FOR RENT IN Nahur\",\n                    \"data\": [\n                        {\n                            \"properties\": {\n                                \"l1\": \"1.62 Cr\",\n                                \"l2\": \"1 BHK Studio Apartment \",\n                                \"l3\": \"Atmosphere Nahur\",\n                                \"l4\": \"1500 sqft \"\n                            },\n                            \"imgs\": [],\n                            \"jd_comp_info\": {\n                                \"docid\": \"022P5508061\",\n                                \"cmpname\": \"360 Degrees Real Estate Services\",\n                                \"d_img\": \"https://images.jdmagicbox.com/def_content/estate_agents_for_residence/default-estate-agents-for-residence-0.jpg?clr=#422424\",\n                                \"d_rating\": \"3.1\",\n                                \"d_web_review\": \"7\",\n                                \"d_numbers\": [\n                                    \"+(91)-9820093893\",\n                                    \"+(91)-22-26482815\",\n                                    \"+(91)-022-65550360\"\n                                ],\n                                \"trusted\": 0,\n                                \"verified\": 0\n                            },\n                            \"s_name\": \"Atmosphere\",\n                            \"pr_id\": \"5f13d7b4299bf404e1ca83d5\"\n                        }\n                    ],\n                    \"type\": \"13\"\n                },\n                {\n                    \"header\": \"Builders in Nahur\",\n                    \"data\": [\n                        {\n                            \"l3\": \"2/2 projects completed\",\n                            \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/j3/022pxx22.xx22.110521132245.g1j3/catalogue/r-s-property-mumbai-f0a425ubv1.jpg\",\n                            \"l2\": \"R S Property\"\n                        },\n                        {\n                            \"l3\": \"2/2 projects completed\",\n                            \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/n4/022pxx22.xx22.151029122548.j9n4/catalogue/vkm-property-consultant-mumbai-32qgqk7alu.jpg?clr=#4d4d1a\",\n                            \"l2\": \"VKM Property Consultant\"\n                        }\n                    ],\n                    \"type\": \"13\"\n                },\n                {\n                    \"header\": \"Price Trends in Nahur\",\n                    \"data\": [\n                        {\n                            \"year\": 2015,\n                            \"price\": 200000\n                        },\n                        {\n                            \"year\": 2014,\n                            \"price\": 250000\n                        }\n                    ],\n                    \"type\": \"13\"\n                }\n            ]\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UrlNotFound",
+            "description": "<p>Url not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
     "url": "/properties/search",
     "title": "Search properties for sale.",
     "name": "GetProperties",
@@ -265,7 +371,23 @@ define({ "api": [
             "optional": true,
             "field": "pg_gender",
             "defaultValue": "Girls",
-            "description": "<p>pg gender type</p>"
+            "description": "<p>pg gender type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "s_name",
+            "defaultValue": "Raheja Atlantis",
+            "description": "<p>Society name(used to fin similar society  properties)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "dlr_id",
+            "defaultValue": "0243567",
+            "description": "<p>deeloer id(used to find similar develoers property)</p>"
           }
         ]
       }
