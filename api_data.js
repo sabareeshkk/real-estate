@@ -1,122 +1,8 @@
 define({ "api": [
   {
     "type": "get",
-    "url": "/properties/builders",
-    "title": "get builders list.",
-    "name": "GetBuilders",
-    "group": "Property",
-    "examples": [
-      {
-        "title": "RENT:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/builders?city=Mumbai&locality=Nahur&page=1&limit=10&sale_type=rent",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "city",
-            "defaultValue": "Mumbai",
-            "description": "<p>Name of the city.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "locality",
-            "defaultValue": "Nahur",
-            "description": "<p>Name of the locality.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "sale_type",
-            "defaultValue": "sale|rent",
-            "description": "<p>Property that looking for.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "results",
-            "description": "<p>Response information.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "results.data",
-            "description": "<p>Response data.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "errors",
-            "description": "<p>Error code and message.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "errors.code",
-            "description": "<p>Error code.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "errors.msg",
-            "description": "<p>Message.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"results\": {\n        \"data\": [\n            {\n                \"l3\": \"2/2 projects completed\",\n                \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/j3/022pxx22.xx22.110521132245.g1j3/catalogue/r-s-property-mumbai-f0a425ubv1.jpg\",\n                \"l2\": \"R S Property\"\n            },\n            {\n                \"l3\": \"2/2 projects completed\",\n                \"l1\": \"http://images.jdmagicbox.com/comp/mumbai/n4/022pxx22.xx22.151029122548.j9n4/catalogue/vkm-property-consultant-mumbai-32qgqk7alu.jpg?clr=#4d4d1a\",\n                \"l2\": \"VKM Property Consultant\"\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "controllers/realEstate/propertyMaster/handlers.js",
-    "groupTitle": "Property",
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "UrlNotFound",
-            "description": "<p>Url not found.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
-          "type": "json"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
     "url": "/properties/home",
-    "title": "get home page data.",
+    "title": "Get Home Page.",
     "name": "GetHome",
     "group": "Property",
     "examples": [
@@ -222,7 +108,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/properties/search",
-    "title": "Search properties for sale.",
+    "title": "Search Properties SALE|RENT|PG.",
     "name": "GetProperties",
     "group": "Property",
     "examples": [
@@ -466,7 +352,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/properties/count",
-    "title": "Request Properties Count",
+    "title": "Properties Count SALE|RENT|PG",
     "name": "GetPropertyCount",
     "group": "Property",
     "examples": [
@@ -611,7 +497,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/properties",
-    "title": "Property details for sale and rent and pg.",
+    "title": "Property Details SALE|PG|RENT.",
     "name": "GetPropertyDetails",
     "group": "Property",
     "parameter": {
@@ -746,7 +632,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/properties/advance_filter",
-    "title": "filter details api.",
+    "title": "GET FILTER DETAILS.",
     "name": "GetPropertyFilter",
     "group": "Property",
     "parameter": {
@@ -822,112 +708,6 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "  HTTP/1.1 200 OK rent\n  {\n\t   \"results\": {\n\t   \t\"data\": {\n\t   \t\t\"BHK Type\": [{\n\t   \t\t\t\"srch_val\": [\n\t   \t\t\t\t\"1 RK\"\n\t   \t\t\t],\n\t   \t\t\t\"_id\": \"5f0f560aacf5db26ca5b3d06\",\n\t   \t\t\t\"range_unit\": null,\n\t   \t\t\t\"g_id\": 1,\n\t   \t\t\t\"g_nm\": \"BHK Type\",\n\t   \t\t\t\"id\": 1,\n\t   \t\t\t\"nm\": \"1 RK\",\n\t   \t\t\t\"f_type\": \"text\",\n\t   \t\t\t\"min\": null,\n\t   \t\t\t\"max\": null\n\t   \t\t}],\n\t   \t\t\"Budget\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0b\",\n\t   \t\t\t\"range_unit\": \"rs\",\n\t   \t\t\t\"g_id\": 2,\n\t   \t\t\t\"g_nm\": \"Budget\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 20000000\n\t   \t\t}],\n\t   \t\t\"Built-up Area\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0d\",\n\t   \t\t\t\"range_unit\": \"sqft\",\n\t   \t\t\t\"g_id\": 4,\n\t   \t\t\t\"g_nm\": \"Built-up Area\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 500000\n\t   \t\t}]\n\t   \t}\n\t   },\n\t   \"errors\": {\n\t   \t\"code\": 0,\n\t   \t\"msg\": \"success\"\n\t   }\n  }",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "controllers/realEstate/propertyMaster/handlers.js",
-    "groupTitle": "Property",
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "UrlNotFound",
-            "description": "<p>Url not found.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
-          "type": "json"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
-    "url": "/properties/trends",
-    "title": "get trending property list.",
-    "name": "GetTrending_Properties",
-    "group": "Property",
-    "examples": [
-      {
-        "title": "RENT:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/trends?city=Mumbai&locality=Nahur&page=1&limit=10",
-        "type": "curl"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "city",
-            "defaultValue": "Mumbai",
-            "description": "<p>Name of the city.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "locality",
-            "defaultValue": "Nahur",
-            "description": "<p>Name of the locality.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "results",
-            "description": "<p>Response information.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "results.data",
-            "description": "<p>Response data.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "errors",
-            "description": "<p>Error code and message.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "errors.code",
-            "description": "<p>Error code.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "errors.msg",
-            "description": "<p>Message.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"results\": {\n        \"data\": [\n            {\n                \"properties\": {\n                    \"l1\": \"4.18 Cr\",\n                    \"l2\": \"4 BHK Independent House/Villa \",\n                    \"l3\": \"Runwal Greens Nahur\",\n                    \"l4\": \"1500 sqft \"\n                },\n                \"imgs\": [],\n                \"jd_comp_info\": {},\n                \"pr_id\": \"5f13d7b5299bf404e1ca90ac\"\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
           "type": "json"
         }
       ]
