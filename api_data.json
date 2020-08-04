@@ -114,12 +114,12 @@
     "examples": [
       {
         "title": "RENT:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Worli&p_type=Residential Apartment&u_price=1627000000&l_price=100&bhk_type=3 BHK&page=1&limit=10&sale_type=rent",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Worli&p_type=Residential Apartment&u_price=1627000000&l_price=100&bhk_type=3 BHK|2 BHK&page=1&limit=10&sale_type=rent",
         "type": "curl"
       },
       {
         "title": "SALE:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Nahur&p_type=Studio Apartment&u_price=1627000000&l_price=100&bhk_type=1 BHK&page=1&limit=10&sale_type=sale",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/search?city=Mumbai&locality=Nahur&p_type=Studio Apartment&u_price=1627000000&l_price=100&bhk_type=1 BHK|2 BHK&page=1&limit=10&sale_type=sale",
         "type": "curl"
       },
       {
