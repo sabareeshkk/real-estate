@@ -631,6 +631,90 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/properties/",
+    "title": "GET basic and adanced details of post property.",
+    "name": "GetPropertyDetails_Create",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "sale:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/basic_details",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "results",
+            "description": "<p>Response information.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "results.data",
+            "description": "<p>Response data.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": "<p>Error code and message.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "errors.code",
+            "description": "<p>Error code.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errors.msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK rent\n{\n     \"results\": {\n         \"data\": {\n             \"sale\": {\n                 \"basic\": [\n                     {\n                         \"hdr\": \"Property Type\",\n                         \"val\": [\n                             \"Apartments\",\n                             \"House/Villa\",\n                             \"Builder Floor\",\n                             \"Penthouse\",\n                             \"Plot\",\n                             \"Office Space\",\n                             \"Shop/Showroom\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Transaction Type\",\n                         \"val\": [\n                             \"new\",\n                             \"resale\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Construction Status\",\n                         \"val\": [\n                             \"Ready to move\",\n                             \"Under Construction\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"BHK\",\n                         \"val\": [\n                             \"1 RK\",\n                             \"1 BHK\",\n                             \"2 BHK\",\n                             \"3 BHK\",\n                             \"3+ BHK\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Bathroom\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Balcony\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Furnishing Type\",\n                         \"val\": [\n                             \"Unfurnished\",\n                             \"Semi-Furnished\",\n                             \"Furnished\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Covered Parking\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Open Parking\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     }\n                 ],\n                 \"advanced\": [\n                     {\n                         \"hdr\": \"Facing\",\n                         \"val\": [\n                             \"North\",\n                             \"East\",\n                             \"West\",\n                             \"South\",\n                             \"North-East\",\n                             \"North-West\",\n                             \"South-East\",\n                             \"South-West\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Additional Rooms\",\n                         \"val\": [\n                             \"Study Room\",\n                             \"Servant Room\",\n                             \"Pooja Room\",\n                             \"Store Room\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Overlooking\",\n                         \"val\": [\n                             \"Pool\",\n                             \"Garden/Park\",\n                             \"Main Road\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"RERA Registered\",\n                         \"val\": [\n                             \"YES\",\n                             \"NO\",\n                             \"Not Applicable\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Amenities\",\n                         \"val\": [\n                             \"intercom\",\n                             \"House Keeping\",\n                             \"Kids Play Area\",\n                             \"Fire Safety\",\n                             \"Security\",\n                             \"Park\",\n                             \"Gym\"\n                         ]\n                     }\n                 ]\n             },\n             \"rent\": {\n                 \"basic\": [\n                     {\n                         \"hdr\": \"Property Type\",\n                         \"val\": [\n                             \"Apartments\",\n                             \"House/Villa\",\n                             \"Builder Floor\",\n                             \"Penthouse\",\n                             \"Plot\",\n                             \"Office Space\",\n                             \"Shop/Showroom\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"BHK\",\n                         \"val\": [\n                             \"1 RK\",\n                             \"1 BHK\",\n                             \"2 BHK\",\n                             \"3 BHK\",\n                             \"3+ BHK\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Bathroom\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Balcony\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Furnishing Type\",\n                         \"val\": [\n                             \"Unfurnished\",\n                             \"Semi-Furnished\",\n                             \"Furnished\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Covered Parking\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Open Parking\",\n                         \"val\": [\n                             \"0\",\n                             \"1\",\n                             \"2\",\n                             \"3\",\n                             \"3+\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Preffered Tenant Type\",\n                         \"val\": [\n                             \"Family\",\n                             \"Company\",\n                             \"Bachelor\"\n                         ]\n                     }\n                 ],\n                 \"advanced\": [\n                     {\n                         \"hdr\": \"Facing\",\n                         \"val\": [\n                             \"North\",\n                             \"East\",\n                             \"West\",\n                             \"South\",\n                             \"North-East\",\n                             \"North-West\",\n                             \"South-East\",\n                             \"South-West\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Additional Rooms\",\n                         \"val\": [\n                             \"Study Room\",\n                             \"Servant Room\",\n                             \"Pooja Room\",\n                             \"Store Room\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Overlooking\",\n                         \"val\": [\n                             \"Pool\",\n                             \"Garden/Park\",\n                             \"Main Road\"\n                         ]\n                     },\n                     {\n                         \"hdr\": \"Amenities\",\n                         \"val\": [\n                             \"intercom\",\n                             \"House Keeping\",\n                             \"Kids Play Area\",\n                             \"Fire Safety\",\n                             \"Security\",\n                             \"Park\",\n                             \"Gym\"\n                         ]\n                     }\n                 ]\n             },\n             \"pg\": {\n                 \"basic\": [],\n                 \"advanced\": []\n             }\n         }\n     },\n     \"errors\": {\n         \"code\": 0,\n         \"msg\": \"success\"\n     }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UrlNotFound",
+            "description": "<p>Url not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
     "url": "/properties/advance_filter",
     "title": "GET FILTER DETAILS.",
     "name": "GetPropertyFilter",
@@ -708,6 +792,120 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "  HTTP/1.1 200 OK rent\n  {\n\t   \"results\": {\n\t   \t\"data\": {\n\t   \t\t\"BHK Type\": [{\n\t   \t\t\t\"srch_val\": [\n\t   \t\t\t\t\"1 RK\"\n\t   \t\t\t],\n\t   \t\t\t\"_id\": \"5f0f560aacf5db26ca5b3d06\",\n\t   \t\t\t\"range_unit\": null,\n\t   \t\t\t\"g_id\": 1,\n\t   \t\t\t\"g_nm\": \"BHK Type\",\n\t   \t\t\t\"id\": 1,\n\t   \t\t\t\"nm\": \"1 RK\",\n\t   \t\t\t\"f_type\": \"text\",\n\t   \t\t\t\"min\": null,\n\t   \t\t\t\"max\": null\n\t   \t\t}],\n\t   \t\t\"Budget\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0b\",\n\t   \t\t\t\"range_unit\": \"rs\",\n\t   \t\t\t\"g_id\": 2,\n\t   \t\t\t\"g_nm\": \"Budget\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 20000000\n\t   \t\t}],\n\t   \t\t\"Built-up Area\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0d\",\n\t   \t\t\t\"range_unit\": \"sqft\",\n\t   \t\t\t\"g_id\": 4,\n\t   \t\t\t\"g_nm\": \"Built-up Area\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 500000\n\t   \t\t}]\n\t   \t}\n\t   },\n\t   \"errors\": {\n\t   \t\"code\": 0,\n\t   \t\"msg\": \"success\"\n\t   }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UrlNotFound",
+            "description": "<p>Url not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 4,\n        \"msg\": \"url not found\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/properties/",
+    "title": "GET search society auto complete.",
+    "name": "GetSocietySearch",
+    "group": "Property",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "s_name",
+            "defaultValue": "At",
+            "description": "<p>search string.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sale_type",
+            "defaultValue": "sale|rent",
+            "description": "<p>Property that looking for.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "defaultValue": "Mumbai",
+            "description": "<p>city name.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "sale:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/society_search?s_name=At&sale_type=sale&city=Mumbai",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "results",
+            "description": "<p>Response information.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "results.data",
+            "description": "<p>Response data.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": "<p>Error code and message.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "errors.code",
+            "description": "<p>Error code.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errors.msg",
+            "description": "<p>Message.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK rent\n{\n\t\"results\": {\n\t\t\"data\": [{\n\t\t\t\"name\": \"Atlantic Orra\",\n\t\t\t\"l1\": \"Kalyan\",\n\t\t\t\"l2\": 1,\n\t\t\t\"l3\": 7,\n\t\t\t\"loation\": {\n\t\t\t\t\"type\": \"Point\",\n\t\t\t\t\"coordinates\": [\n\t\t\t\t\t73.122196,\n\t\t\t\t\t19.245844\n\t\t\t\t]\n\t\t\t}\n\t\t}]\n\t},\n\t\"errors\": {\n\t\t\"code\": 0,\n\t\t\"msg\": \"success\"\n\t}\n}",
           "type": "json"
         }
       ]
