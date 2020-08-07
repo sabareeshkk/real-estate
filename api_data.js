@@ -2,8 +2,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "real_estate/properties/csv_upload",
-    "title": "POST PROPERTY SALE|RENT-->OWNER|AGENT",
-    "name": "GetCsvUpload",
+    "title": "download format csv",
+    "name": "GetCsvDownload",
     "group": "Property",
     "examples": [
       {
