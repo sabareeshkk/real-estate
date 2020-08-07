@@ -106,6 +106,53 @@
     }
   },
   {
+    "type": "post",
+    "url": "/real_estate/properties/create",
+    "title": "POST PROPERTY SALE|RENT-->OWNER|AGENT",
+    "name": "GetPostProperty",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example SALE:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/create\n\nbody:\n  {\n  \t\"posted_by\":\"Owner\",\n  \t\"city\":\"Kochi\",\n  \t\"sale_type\":\"sale\",\n  \t\"p_type\":\"Apartments\",\n  \t\"trn_type\": \"new\",\n  \t\"avail_frm\":\"Ready To Move\",\n  \t\"bhk_type\":\"1 BHK\",\n  \t\"bath_rm_num\": 2,\n  \t\"bl_no\": 1,\n  \t\"furn_type\":\"Furnished\",\n  \t\"cost\":4000000,\n  \t\"p_main\": 2000,\n  \t\"p_area\": 700,\n  \t\"c_area\":  400,\n  \t\"s_name\":\"Atmosphere\",\n  \t\"locality\": \"Vyttila\",\n  \t\"no_flr\":2,\n  \t\"totl_flr\": 45,\n  \t\"loc\":[72.686, 19.045],\n  \t\"imgs\":[{\"url\":\"https://dummy.jpg\", \"cover\": true, \"rm_no\": 1}],\n  \t\"p_facing\": \"North\",\n  \t\"add_rm\":[\"Pooja Room\", \"Study Room\"],\n  \t  \"ovr_lk\": \"Pool\",\n     \"addr\": \"somewhere in the middle of vuttila r\",\n    \"desc\": \"lovely\",\n    \"rera\": \"Yes\",\n    \"p_age\": 10,\n    \"amen_srch\":[],\n    \"id\":\"5f2c03b9ea532737bf833c7c\"\n  }",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Users ID add after the first request put it on the subsequent request.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sale_type",
+            "defaultValue": "sale",
+            "description": "<p>sale_type.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": {\n            \"id\": \"5f2c03b9ea532737bf833c7c\"\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
     "type": "get",
     "url": "/properties/search",
     "title": "Search Properties SALE|RENT|PG.",
