@@ -154,7 +154,7 @@
     "examples": [
       {
         "title": "Example SALE:",
-        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/create\n\nbody:\n  {\n  \t\"posted_by\":\"Owner\",\n  \t\"city\":\"Kochi\",\n  \t\"sale_type\":\"sale\",\n  \t\"p_type\":\"Apartments\",\n  \t\"trn_type\": \"new\",\n  \t\"avail_frm\":\"Ready To Move\",\n  \t\"bhk_type\":\"1 BHK\",\n  \t\"bath_rm_num\": 2,\n  \t\"bl_no\": 1,\n  \t\"furn_type\":\"Furnished\",\n  \t\"cost\":4000000,\n  \t\"p_main\": 2000,\n  \t\"p_area\": 700,\n  \t\"c_area\":  400,\n  \t\"s_name\":\"Atmosphere\",\n  \t\"locality\": \"Vyttila\",\n  \t\"no_flr\":2,\n  \t\"totl_flr\": 45,\n  \t\"loc\":[72.686, 19.045],\n  \t\"imgs\":[{\"url\":\"https://dummy.jpg\", \"cover\": true, \"rm_no\": 1}],\n  \t\"p_facing\": \"North\",\n  \t\"add_rm\":[\"Pooja Room\", \"Study Room\"],\n  \t  \"ovr_lk\": \"Pool\",\n     \"addr\": \"somewhere in the middle of vuttila r\",\n    \"desc\": \"lovely\",\n    \"rera\": \"Yes\",\n    \"p_age\": 10,\n    \"amen_srch\":[],\n    \"id\":\"5f2c03b9ea532737bf833c7c\"\n  }",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/create\n\nbody:\n  {\n  \t\"posted_by\":\"Owner\",\n  \t\"city\":\"Kochi\",\n  \t\"sale_type\":\"sale\",\n  \t\"p_type\":\"Apartments\",\n  \t\"trn_type\": \"new\",\n  \t\"avail_frm\":\"Ready To Move\",\n  \t\"bhk_type\":\"1 BHK\",\n  \t\"bath_rm_num\": 2,\n  \t\"bl_no\": 1,\n  \t\"furn_type\":\"Furnished\",\n  \t\"cost\":4000000,\n  \t\"p_main\": 2000,\n  \t\"p_area\": 700,\n  \t\"c_area\":  400,\n  \t\"s_name\":\"Atmosphere\",\n  \t\"locality\": \"Vyttila\",\n  \t\"no_flr\":2,\n  \t\"totl_flr\": 45,\n  \t\"loc\":[72.686, 19.045],\n  \t\"imgs\":[{\"url\":\"https://dummy.jpg\", \"cover\": true, \"rm_no\": 1}],\n  \t\"p_facing\": \"North\",\n  \t\"add_rm\":[\"Pooja Room\", \"Study Room\"],\n  \t  \"ovr_lk\": \"Pool\",\n     \"addr\": \"somewhere in the middle of vuttila r\",\n    \"desc\": \"lovely\",\n    \"rera_comp\": \"Yes\",\n    \"p_age\": 10,\n    \"amen_srch\":[],\n    \"id\":\"5f2c03b9ea532737bf833c7c\"\n  }",
         "type": "json"
       }
     ],
@@ -294,6 +294,22 @@
             "group": "Parameter",
             "type": "String",
             "optional": true,
+            "field": "avail_frm",
+            "defaultValue": "1|2-->sale|rent",
+            "description": "<p>property availlable from or possesion.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "posted_by",
+            "defaultValue": "Dealer",
+            "description": "<p>posted by user type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
             "field": "furn_type",
             "defaultValue": "Furnished-->sale|rent",
             "description": "<p>furnish type.</p>"
@@ -305,6 +321,46 @@
             "field": "amen_srch",
             "defaultValue": "Lift-->sale|rent",
             "description": "<p>amenities type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "bath_rm_num",
+            "defaultValue": "1",
+            "description": "<p>bathroom number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "p_age",
+            "defaultValue": "1",
+            "description": "<p>property age.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "rera_comp",
+            "defaultValue": "Yes|No",
+            "description": "<p>RERA compalint avilable.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "p_facing",
+            "defaultValue": "North",
+            "description": "<p>facing details.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "p_tnt_type",
+            "defaultValue": "Family",
+            "description": "<p>prefered tenant type.</p>"
           },
           {
             "group": "Parameter",
