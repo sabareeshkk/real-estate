@@ -888,16 +888,24 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "p_id",
+            "field": "city",
+            "defaultValue": "Mumbai",
+            "description": "<p>city.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "locality",
             "defaultValue": "Nahur",
-            "description": "<p>document id.</p>"
+            "description": "<p>locality.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "sale_type",
-            "defaultValue": "sale|rent",
+            "defaultValue": "sale|rent|pg",
             "description": "<p>Property that looking for.</p>"
           }
         ]
@@ -906,7 +914,17 @@
     "examples": [
       {
         "title": "sale:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/advance_filter?f_type=buy",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/advance_filter?city=Mumbai&sale_type=sale&locality=Nahur",
+        "type": "curl"
+      },
+      {
+        "title": "rent:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/advance_filter?city=Mumbai&sale_type=rent&locality=Nahur",
+        "type": "curl"
+      },
+      {
+        "title": "rent:",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/advance_filter?city=Delhi&sale_type=pg&locality=Noida Sector 58",
         "type": "curl"
       }
     ],
@@ -953,7 +971,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK rent\n  {\n\t   \"results\": {\n\t   \t\"data\": {\n\t   \t\t\"BHK Type\": [{\n\t   \t\t\t\"srch_val\": [\n\t   \t\t\t\t\"1 RK\"\n\t   \t\t\t],\n\t   \t\t\t\"_id\": \"5f0f560aacf5db26ca5b3d06\",\n\t   \t\t\t\"range_unit\": null,\n\t   \t\t\t\"g_id\": 1,\n\t   \t\t\t\"g_nm\": \"BHK Type\",\n\t   \t\t\t\"id\": 1,\n\t   \t\t\t\"nm\": \"1 RK\",\n\t   \t\t\t\"f_type\": \"text\",\n\t   \t\t\t\"min\": null,\n\t   \t\t\t\"max\": null\n\t   \t\t}],\n\t   \t\t\"Budget\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0b\",\n\t   \t\t\t\"range_unit\": \"rs\",\n\t   \t\t\t\"g_id\": 2,\n\t   \t\t\t\"g_nm\": \"Budget\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 20000000\n\t   \t\t}],\n\t   \t\t\"Built-up Area\": [{\n\t   \t\t\t\"srch_val\": [],\n\t   \t\t\t\"_id\": \"5f0f560bacf5db26ca5b3d0d\",\n\t   \t\t\t\"range_unit\": \"sqft\",\n\t   \t\t\t\"g_id\": 4,\n\t   \t\t\t\"g_nm\": \"Built-up Area\",\n\t   \t\t\t\"id\": null,\n\t   \t\t\t\"nm\": \"\",\n\t   \t\t\t\"f_type\": \"range\",\n\t   \t\t\t\"min\": 0,\n\t   \t\t\t\"max\": 500000\n\t   \t\t}]\n\t   \t}\n\t   },\n\t   \"errors\": {\n\t   \t\"code\": 0,\n\t   \t\"msg\": \"success\"\n\t   }\n  }",
+          "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": [\n            {\n                \"header\": \"BHK Type\",\n                \"spec\": [\n                    \"1 BHK\",\n                    \"2 BHK\",\n                    \"3 BHK\"\n                ],\n                \"field\": \"bhk_type\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Budget\",\n                \"spec\": {\n                    \"min\": 12000,\n                    \"max\": 65000\n                },\n                \"field\": {\n                    \"min\": \"l_price\",\n                    \"max\": \"u_price\"\n                },\n                \"type\": \"31\"\n            },\n            {\n                \"header\": \"Posted By\",\n                \"spec\": [\n                    \"Owner\",\n                    \"Dealer\"\n                ],\n                \"field\": \"posted_by\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Property Type\",\n                \"spec\": [\n                    \"Residential Apartment\"\n                ],\n                \"field\": \"p_type\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Built-up Area\",\n                \"spec\": {\n                    \"min\": 300,\n                    \"max\": 5005.2135\n                },\n                \"field\": {\n                    \"min\": \"l_area\",\n                    \"max\": \"u_area\"\n                },\n                \"type\": \"31\"\n            },\n            {\n                \"header\": \"Furnishing Type\",\n                \"spec\": [\n                    \"Furnished\",\n                    \"Unfurnished\",\n                    \"Semifurnished\"\n                ],\n                \"field\": \"furn_type\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Prefered Tenant Type\",\n                \"spec\": [\n                    \"Bachelors (Men Only)\",\n                    \"Family\",\n                    \"Family Only\",\n                    \"All\"\n                ],\n                \"field\": \"p_tnt_type\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Bathroom\",\n                \"spec\": [\n                    4,\n                    0,\n                    2,\n                    3\n                ],\n                \"field\": \"bath_rm_num\",\n                \"type\": \"30\"\n            },\n            {\n                \"header\": \"Age of Property\",\n                \"spec\": [\n                    {\n                        \"key\": \"Less than 1 year\",\n                        \"val\": 1\n                    },\n                    {\n                        \"key\": \"1-5 years\",\n                        \"val\": 2\n                    },\n                    {\n                        \"key\": \"6-10 years\",\n                        \"val\": 3\n                    },\n                    {\n                        \"key\": \"More than 10 years\",\n                        \"val\": 4\n                    }\n                ],\n                \"field\": \"p_age\",\n                \"type\": \"32\"\n            },\n            {\n                \"header\": \"Added\",\n                \"spec\": [\n                    {\n                        \"key\": \"Yesterday\",\n                        \"val\": 1\n                    },\n                    {\n                        \"key\": \"Last 3 Days\",\n                        \"val\": 2\n                    },\n                    {\n                        \"key\": \"Last Week\",\n                        \"val\": 3\n                    },\n                    {\n                        \"key\": \"Last Month\",\n                        \"val\": 4\n                    }\n                ],\n                \"field\": \"posted_on\",\n                \"type\": \"32\"\n            },\n            {\n                \"header\": \"Available\",\n                \"spec\": [\n                    {\n                        \"key\": \"within a week\",\n                        \"val\": 1\n                    },\n                    {\n                        \"key\": \"within 15 days\",\n                        \"val\": 2\n                    },\n                    {\n                        \"key\": \"within a month\",\n                        \"val\": 3\n                    },\n                    {\n                        \"key\": \"After a month\",\n                        \"val\": 4\n                    }\n                ],\n                \"field\": \"avail_frm\",\n                \"type\": \"32\"\n            },\n            {\n                \"header\": \"Amenities\",\n                \"spec\": [\n                    \"Centrally Air Conditioned\",\n                    \"Swimming Pool\",\n                    \"Piped-gas\",\n                    \"Water Storage\",\n                    \"Visitor Parking\",\n                    \"Water purifier\",\n                    \"Fitness Centre / GYM\",\n                    \"Park\",\n                    \"Rain Water Harvesting\",\n                    \"Private Garden / Terrace\",\n                    \"Internet/wi-fi connectivity\",\n                    \"Lift(s)\",\n                    \"Fit\",\n                    \"Security Personnel\",\n                    \"Feng Shui / Vaastu Compliant\",\n                    \"Maintenance Staff\",\n                    \"Waste Disposal\",\n                    \"Intercom Facility\",\n                    \"Bank Attached Property\",\n                    \"Shopping Centre\",\n                    \"Water softening plant\",\n                    \"\",\n                    \"Security / Fire Alarm\",\n                    \"Club house / Community Center\"\n                ],\n                \"field\": \"amen_srch\",\n                \"type\": \"33\"\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
           "type": "json"
         }
       ]
