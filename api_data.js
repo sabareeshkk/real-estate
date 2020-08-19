@@ -1130,7 +1130,7 @@ define({ "api": [
     }
   },
   {
-    "type": "post",
+    "type": "put",
     "url": "/real_estate/properties/edit",
     "title": "EDIT PROPERTY SALE|RENT-->OWNER|AGENT",
     "name": "GetUpdateProperty",
