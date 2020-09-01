@@ -681,12 +681,12 @@
       },
       {
         "title": "SALE:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f13d7b4299bf404e1ca83d5&sale_type=sale",
+        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f439d324347431b105423cc&sale_type=sale",
         "type": "curl"
       },
       {
         "title": "RENT:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f11c69ce8cca076d4092da0&sale_type=rent",
+        "content": "https://myjdapi.justdial.com/real_estate/properties?p_id=5f11c699e8cca076d40914ae&sale_type=rent",
         "type": "curl"
       }
     ],
