@@ -146,6 +146,45 @@ define({ "api": [
     }
   },
   {
+    "type": "get",
+    "url": "/real_estate/properties/listings",
+    "title": "EDIT PROPERTY SALE|RENT-->OWNER|AGENT",
+    "name": "GetListings",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example SALE-UPDATE:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/listings?sale_type=sale&posted_by=builder",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>property id of the updating document.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n[\n            [\n            {\n                \"property\": [\n                    \"Sobha Dream Acres\",\n                    \"Balagere Bangalore\",\n                    \"21 BHK \",\n                    \"37.82 Lac 69.00 Lac\"\n                ],\n                \"img\": [\n                    [\n                        \"https://www.sobha.com/images/projects/gallery/thumb/153864820820181004.jpg\",\n                        \"https://www.sobha.com/images/projects/gallery/thumb/153864823720181004.jpg\",\n                        \"https://www.sobha.com/images/projects/gallery/thumb/153864825020181004.jpg\",\n                        \"https://www.sobha.com/images/projects/gallery/thumb/153864826120181004.jpg\",\n                        \"https://www.sobha.com/images/projects/gallery/thumb/153864827120181004.jpg\",\n                        \"https://www.sobha.com/static/project/current/Bangalore/sobha-dream-acres/bookonline/images/bookonline/SDA-Photos-2bo.jpg\",\n                        \"https://i.ytimg.com/vi/-WRTy1ylerw/hqdefault.jpg\",\n                        \"https://www.sobha.com/images/projects/thumb/153864575320181004.jpg\",\n                        \"https://www.sobha.com/images/projects/thumb/154089515720181030.jpg\",\n                        \"https://www.sobha.com/static/project/current/Bangalore/sobha-dream-acres/bookonline/images/bookonline/SDA-Photos-3bo.jpg\"\n                    ]\n                ],\n                \"location\": {\n                    \"type\": \"Point\",\n                    \"coordinates\": [\n                        77.737663,\n                        12.939126\n                    ]\n                },\n                \"prj_id\": \"5f5bc913b0c4351be794b393\"\n            }\n        ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
     "type": "post",
     "url": "/real_estate/properties/create",
     "title": "POST PROPERTY SALE|RENT-->OWNER|AGENT",
