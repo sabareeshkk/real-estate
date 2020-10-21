@@ -1,14 +1,14 @@
 define({ "api": [
   {
     "type": "get",
-    "url": "real_estate/properties/csv_upload",
+    "url": "real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
     "title": "download format csv",
     "name": "GetCsvDownload",
     "group": "Property",
     "examples": [
       {
         "title": "Example SALE:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/csv_upload",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
         "type": "json"
       }
     ],
@@ -1199,6 +1199,86 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": {\n            \"id\": \"5f2c03b9ea532737bf833c7c\"\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "post",
+    "url": "/real_estate/properties/create_builder",
+    "title": "CREATE BUILDER PROPERTY",
+    "name": "createBuilder",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example SALE-UPDATE:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/create_builder",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n\t\"posted_by\":\"Builder\",\n\t\"prj_id\":\"5f5b031f553c9ff02e40d4a1\",\n\t\"city\":\"Kochi\",\n\t\"sale_type\":\"sale\",\n\t\"s_name\":\"Sobha Hartland\",\n\t\"p_desc\":\"anything that can be made out to be true is this nothing else\",\n\t\"prj_logo\":\"https://dummy.jpg\",\n\t\"prj_brchr\":\"https://dummy.jpg\",\n\t\"prj_dev\":\"sobha Realty\",\n\t\"rera_reg_no\": \"P52000023225\",\n\t\"ttl_prjt_area\": 40000,\n\t\"opn_area\":20000,\n\t\"avail_frm_desc\":\"Ready To Move\",\n\t\"p_bank_aprv\":[\"HDFC\", \"AXIS\"],\n\t\"configurations\":[{\"id\":\"5f60b210bc6cdd395d6a3081\", \"data\":[{\n\t\"flr_pln\":\"https://dummy.jpg\",\n\t\"bhk_type\": \"1 BHK\",\n\t\"p_area\":1500,\n\t\"carpt_area\":800,\n\t\"base_pri\": 20000,\n\t\"avail_frm\": \"22/05/2021\",\n\t\"p_adv\": [\"youtube\", \"facebook\"],\n\t\"p_add_room\":[\"Study Room\", \"Pooja Room\"],\n\t\"bath_rm_num\": 1,\n\t\"balcony_num\":1\n\t}]}, {\"id\":\"\", \"data\":[{\n\t\"flr_pln\":\"https://dummy.jpg\",\n\t\"bhk_type\": \"2 BHK\",\n\t\"p_area\":1500,\n\t\"carpt_area\":1000,\n\t\"base_pri\": 30000,\n\t\"avail_frm\": \"22/05/2021\",\n\t\"p_adv\": [\"youtube\", \"facebook\"],\n\t\"p_add_room\":[\"Study Room\", \"Pooja Room\"],\n\t\"bath_rm_num\": 1,\n\t\"balcony_num\":1\n\t}]}],\n\t\"b_no_tower\":1,\n\t\"p_total_flr\":40,\n\t\"b_no_units\": 2,\n\t\"location\":[72.86, 19.09],\n\t\"resale_pri\":3000000,\n\t\"p_spec\":\"terminator\",\n\t\"prj_info\":\"its all good\",\n\t\"locality_desc\": \"take care of yourself\",\n\t\"s_amen\":[\"Lifts\", \"Card\"]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": {\n            \"prj_id\": \"5f5b031f553c9ff02e40d4a1\"\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "post",
+    "url": "/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
+    "title": "CSV UPLOAD",
+    "name": "csvUpload",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example CSV-UPLOAD-AGENT:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
+        "type": "json"
+      },
+      {
+        "title": "Example CSV-UPLOAD-AGENT-SALE:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=rent&posted_by=Agent",
+        "type": "json"
+      },
+      {
+        "title": "Example CSV-UPLOAD-BUILDER:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?posted_by=builder",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n   file: csv \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
           "type": "json"
         }
       ]
