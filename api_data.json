@@ -8,7 +8,7 @@
     "examples": [
       {
         "title": "Example SALE:",
-        "content": "https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
+        "content": "https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=dealer",
         "type": "json"
       }
     ],
@@ -1251,12 +1251,12 @@
     "examples": [
       {
         "title": "Example CSV-UPLOAD-AGENT:",
-        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=sale&posted_by=dealer",
         "type": "json"
       },
       {
         "title": "Example CSV-UPLOAD-AGENT-SALE:",
-        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=rent&posted_by=Agent",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/csv_upload?sale_type=rent&posted_by=dealer",
         "type": "json"
       },
       {
