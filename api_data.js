@@ -1245,6 +1245,32 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/real_estate/properties/favorite",
+    "title": "",
+    "name": "addtoFavorite",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example Favorite add:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/favorite?jduid=9091608021500002900",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n\t\"results\": {\n\t\t\"data\": {\n\t\t\t\"rent\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\"url\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\",\n\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t}],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"pr_id\": \"5f6b3048806b457aee7fba69\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"s_name\": \"Indiabulls Blu\",\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t18.997553,\n\t\t\t\t\t\t\t72.820343\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"2.80L\",\n\t\t\t\t\t\"cntid\": \"\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Worli\"\n\t\t\t\t}\n\n\t\t\t],\n\t\t\t\"sale\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"s_name\": \"Devtaa Codename Desire\",\n\t\t\t\t\t\"pr_id\": \"5fbce272ed97e61d282c0fb5\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t19.152057,\n\t\t\t\t\t\t\t72.950406\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"72.00L\",\n\t\t\t\t\t\"posted_as\": \"property\",\n\t\t\t\t\t\"possession\": \"Under Construction\",\n\t\t\t\t\t\"cntid\": \"022PXX22.XX22.200927122607.S5V9\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Nahur\"\n\t\t\t\t}\n\n\t\t\t]\n\t\t}\n\t},\n\t\"errors\": {\n\t\t\"code\": 0,\n\t\t\"msg\": \"success\"\n\t}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "post",
     "url": "/real_estate/properties/create_builder",
     "title": "CREATE BUILDER PROPERTY",
     "name": "createBuilder",
@@ -1315,6 +1341,32 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": []\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "post",
+    "url": "/real_estate/properties/get_in_touch",
+    "title": "",
+    "name": "getIntouch",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example Favorite add:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/get_in_touch?docid=022PXX22.XX22.170819083851.K5G5&posted_as=project&p_id=5f4ce866b0c4351be7948858&sale_type=sale&cntid=022PXX22.XX22.200925133530.S6T3",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": [\n\n            {\n                \"docid\": \"022PXX22.XX22.161214231508.H4I8\",\n                \"cmpname\": \"Swastik Property Dealer\",\n                \"d_img\": \"https://images.jdmagicbox.com/comp/mumbai/i8/022pxx22.xx22.161214231508.h4i8/catalogue/swastik-property-dealer-andheri-east-mumbai-estate-agents-for-residential-rental-2nfzy.jpg?clr=#392d39\",\n                \"d_rating\": \"3.8\",\n                \"d_web_review\": \"56\",\n                \"d_numbers\": [\n                    \"+(91)-7400198106\",\n                    \"+(91)-9768598106\"\n                ],\n                \"trusted\": 0,\n                \"verified\": 0,\n                \"paidstatus\": \"5\",\n                \"dimages\": [\n                    \"http://images.jdmagicbox.com/comp/mumbai/i8/022pxx22.xx22.161214231508.h4i8/catalogue/swastik-property-dealer-andheri-east-mumbai-estate-agents-for-residential-rental-2nfzy.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/i8/022pxx22.xx22.161214231508.h4i8/catalogue/swastik-property-dealer-andheri-east-mumbai-estate-agents-for-residential-rental-t3hdiovn8p.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/i8/022pxx22.xx22.161214231508.h4i8/catalogue/swastik-property-dealer-andheri-east-mumbai-estate-agents-for-residential-rental-016kgrzc06.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/i8/022pxx22.xx22.161214231508.h4i8/catalogue/swastik-property-dealer-andheri-east-mumbai-estate-agents-for-residential-rental-pvjm5ihrfo.jpg\"\n                ],\n                \"v_number\": [\n                    \"+(91)-7947180315\"\n                ],\n                \"cancall\": 1,\n                \"bd_text\": \"Enquire\",\n                \"jd_tags\": [\n                    \"https://akam.cdn.jdmagicbox.com/images/icons/iphone/verified.png?width=48\",\n                    \"https://akam.cdn.jdmagicbox.com/images/icons/iphone/trust.png?width=53\"\n                ]\n            },\n            {\n                \"docid\": \"022PXX22.XX22.130723130100.S4X4\",\n                \"cmpname\": \"Unique Property Consultant\",\n                \"d_img\": \"https://images.jdmagicbox.com/comp/mumbai/x4/022pxx22.xx22.130723130100.s4x4/catalogue/unique-property-consultant-andheri-east-mumbai-estate-agents-for-residence-hwqaq0xrtj.jpg?clr=#4b2b1b\",\n                \"d_rating\": \"4.8\",\n                \"d_web_review\": \"8\",\n                \"d_numbers\": [\n                    \"+(91)-9167103856\",\n                    \"+(91)-9820117133\",\n                    \"+(91)-6392957576\"\n                ],\n                \"trusted\": 0,\n                \"verified\": 0,\n                \"paidstatus\": \"5\",\n                \"dimages\": [\n                    \"http://images.jdmagicbox.com/comp/mumbai/x4/022pxx22.xx22.130723130100.s4x4/catalogue/unique-property-consultant-andheri-east-mumbai-estate-agents-for-residence-hwqaq0xrtj.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/x4/022pxx22.xx22.130723130100.s4x4/catalogue/unique-property-consultant-andheri-east-mumbai-estate-agents-for-residence-asbie15wkq.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/x4/022pxx22.xx22.130723130100.s4x4/catalogue/unique-property-consultant-marol-pipeline-andheri-east-mumbai-estate-agents-for-residence-9kkqvvf87c.jpg\",\n                    \"http://images.jdmagicbox.com/comp/mumbai/x4/022pxx22.xx22.130723130100.s4x4/catalogue/unique-property-consultant-andheri-east-mumbai-estate-agents-for-residence-z7roykhuvc.jpg\"\n                ],\n                \"v_number\": [\n                    \"+(91)-7947174240\"\n                ],\n                \"cancall\": 1,\n                \"bd_text\": \"Enquire\",\n                \"jd_tags\": [\n                    \"https://akam.cdn.jdmagicbox.com/images/icons/iphone/verified.png?width=48\",\n                    \"https://akam.cdn.jdmagicbox.com/images/icons/iphone/trust.png?width=53\"\n                ]\n            }\n        ]\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
           "type": "json"
         }
       ]
