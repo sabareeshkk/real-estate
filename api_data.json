@@ -1245,32 +1245,6 @@
   },
   {
     "type": "post",
-    "url": "/real_estate/properties/favorite",
-    "title": "GET-FAVORITES",
-    "name": "addtoFavorite",
-    "group": "Property",
-    "examples": [
-      {
-        "title": "Example Favorite add:",
-        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/favorite?jduid=9091608021500002900",
-        "type": "json"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "   HTTP/1.1 200 OK rent\n{\n\t\"results\": {\n\t\t\"data\": {\n\t\t\t\"rent\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\"url\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\",\n\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t}],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"pr_id\": \"5f6b3048806b457aee7fba69\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"s_name\": \"Indiabulls Blu\",\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t18.997553,\n\t\t\t\t\t\t\t72.820343\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"2.80L\",\n\t\t\t\t\t\"cntid\": \"\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Worli\"\n\t\t\t\t}\n\n\t\t\t],\n\t\t\t\"sale\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"s_name\": \"Devtaa Codename Desire\",\n\t\t\t\t\t\"pr_id\": \"5fbce272ed97e61d282c0fb5\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t19.152057,\n\t\t\t\t\t\t\t72.950406\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"72.00L\",\n\t\t\t\t\t\"posted_as\": \"property\",\n\t\t\t\t\t\"possession\": \"Under Construction\",\n\t\t\t\t\t\"cntid\": \"022PXX22.XX22.200927122607.S5V9\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Nahur\"\n\t\t\t\t}\n\n\t\t\t]\n\t\t}\n\t},\n\t\"errors\": {\n\t\t\"code\": 0,\n\t\t\"msg\": \"success\"\n\t}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "controllers/realEstate/propertyMaster/handlers.js",
-    "groupTitle": "Property"
-  },
-  {
-    "type": "post",
     "url": "/real_estate/properties/create_builder",
     "title": "CREATE BUILDER PROPERTY",
     "name": "createBuilder",
@@ -1350,9 +1324,35 @@
     "groupTitle": "Property"
   },
   {
-    "type": "post",
+    "type": "get",
+    "url": "/real_estate/properties/favorite",
+    "title": "GET-FAVORITES",
+    "name": "getFavorite",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "Example Favorite add:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/favorite?jduid=9091608021500002900",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n\t\"results\": {\n\t\t\"data\": {\n\t\t\t\"rent\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 2.80 L\",\n\t\t\t\t\t\t\"3 BHK Apartments\",\n\t\t\t\t\t\t\"Indiabulls Blu Worli\",\n\t\t\t\t\t\t\"1750 sq.ft • Semifurnished\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\"url\": \"https://akam.cdn.jdmagicbox.com/images/icontent/newwap/realestate/real-buy-2x.png\",\n\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t}],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"pr_id\": \"5f6b3048806b457aee7fba69\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"s_name\": \"Indiabulls Blu\",\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t18.997553,\n\t\t\t\t\t\t\t72.820343\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"2.80L\",\n\t\t\t\t\t\"cntid\": \"\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Worli\"\n\t\t\t\t}\n\n\t\t\t],\n\t\t\t\"sale\": [{\n\t\t\t\t\t\"properties\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\"\n\t\t\t\t\t],\n\t\t\t\t\t\"info\": [\n\t\t\t\t\t\t\"₹ 72.00 L\",\n\t\t\t\t\t\t\"1 BHK Apartments\",\n\t\t\t\t\t\t\"Devtaa Codename Desire,Nahur\",\n\t\t\t\t\t\t\"435 sq.ft • ₹ 16.55K/sq.ft\",\n\t\t\t\t\t\t\"\"\n\t\t\t\t\t],\n\t\t\t\t\t\"imgs\": [\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\"\n\t\t\t\t\t],\n\t\t\t\t\t\"media\": [{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-1iaixjk1zj.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-0kcv9cgil4.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-zvtixszezb.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"url\": \"http://images.jdmagicbox.com/comp/mumbai/v9/022pxx22.xx22.200927122607.s5v9/catalogue/devtaa-codename-desire-mumbai-residential-buildings-jcmoz9q67v.jpg\",\n\t\t\t\t\t\t\t\"type\": \"image\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"jd_comp_info\": {},\n\t\t\t\t\t\"s_name\": \"Devtaa Codename Desire\",\n\t\t\t\t\t\"pr_id\": \"5fbce272ed97e61d282c0fb5\",\n\t\t\t\t\t\"favorite\": true,\n\t\t\t\t\t\"location\": {\n\t\t\t\t\t\t\"coordinates\": [\n\t\t\t\t\t\t\t19.152057,\n\t\t\t\t\t\t\t72.950406\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"m_price\": \"72.00L\",\n\t\t\t\t\t\"posted_as\": \"property\",\n\t\t\t\t\t\"possession\": \"Under Construction\",\n\t\t\t\t\t\"cntid\": \"022PXX22.XX22.200927122607.S5V9\",\n\t\t\t\t\t\"catid\": \"\",\n\t\t\t\t\t\"catname\": \"\",\n\t\t\t\t\t\"city\": \"Mumbai\",\n\t\t\t\t\t\"area\": \"Nahur\"\n\t\t\t\t}\n\n\t\t\t]\n\t\t}\n\t},\n\t\"errors\": {\n\t\t\"code\": 0,\n\t\t\"msg\": \"success\"\n\t}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "get",
     "url": "/real_estate/properties/get_in_touch",
-    "title": "",
+    "title": "PAID-AGENTS",
     "name": "getIntouch",
     "group": "Property",
     "examples": [
