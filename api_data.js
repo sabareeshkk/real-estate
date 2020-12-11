@@ -1215,7 +1215,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/real_estate/properties/favorite",
-    "title": "",
+    "title": "ADD-FAVORITE",
     "name": "addtoFavorite",
     "group": "Property",
     "examples": [
@@ -1246,7 +1246,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/real_estate/properties/favorite",
-    "title": "",
+    "title": "GET-FAVORITES",
     "name": "addtoFavorite",
     "group": "Property",
     "examples": [
