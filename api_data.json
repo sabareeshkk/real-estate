@@ -1,8 +1,8 @@
 [
   {
     "type": "get",
-    "url": "real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
-    "title": "download format csv",
+    "url": "real_estate/properties/csv_upload?sale_type=sale&posted_by=agent",
+    "title": "",
     "name": "GetCsvDownload",
     "group": "Property",
     "examples": [
@@ -42,7 +42,7 @@
   {
     "type": "get",
     "url": "/properties/home",
-    "title": "Get Home Page.",
+    "title": "HOME-PAGE",
     "name": "GetHome",
     "group": "Property",
     "examples": [
@@ -148,7 +148,7 @@
   {
     "type": "get",
     "url": "/real_estate/properties/listings",
-    "title": "EDIT PROPERTY LISTING  SALE|RENT-->OWNER|AGENT",
+    "title": "LISTING-PROPERTY",
     "name": "GetListings",
     "group": "Property",
     "examples": [
@@ -192,7 +192,7 @@
   {
     "type": "post",
     "url": "/real_estate/properties/create",
-    "title": "POST PROPERTY SALE|RENT-->OWNER|AGENT",
+    "title": "POST-PROPERTY",
     "name": "GetPostProperty",
     "group": "Property",
     "examples": [
@@ -239,7 +239,7 @@
   {
     "type": "get",
     "url": "/properties/search",
-    "title": "Search Properties SALE|RENT|PG.",
+    "title": "SEARCH-PROPERTIES",
     "name": "GetProperties",
     "group": "Property",
     "examples": [
@@ -539,7 +539,7 @@
   {
     "type": "get",
     "url": "/properties/count",
-    "title": "Properties Count SALE|RENT|PG",
+    "title": "PROPERTY-COUNT",
     "name": "GetPropertyCount",
     "group": "Property",
     "examples": [
@@ -692,7 +692,7 @@
   {
     "type": "get",
     "url": "/properties",
-    "title": "Property Details SALE|PG|RENT.",
+    "title": "PROPERTY-DETAILS",
     "name": "GetPropertyDetails",
     "group": "Property",
     "parameter": {
@@ -827,7 +827,7 @@
   {
     "type": "get",
     "url": "/properties/",
-    "title": "GET basic and adanced details of post property.",
+    "title": "CREATE-EDIT-DETAILS PROPERTY.",
     "name": "GetPropertyDetails_Create",
     "group": "Property",
     "parameter": {
@@ -930,7 +930,7 @@
   {
     "type": "get",
     "url": "/properties/advance_filter",
-    "title": "GET FILTER DETAILS.",
+    "title": "FILTER-PROPERTY",
     "name": "GetPropertyFilter",
     "group": "Property",
     "parameter": {
@@ -1062,7 +1062,7 @@
   {
     "type": "get",
     "url": "/properties/",
-    "title": "GET search society auto complete.",
+    "title": "SOCIETY-SEARCH AUTOCOMPLETE.",
     "name": "GetSocietySearch",
     "group": "Property",
     "parameter": {
@@ -1246,7 +1246,7 @@
   {
     "type": "post",
     "url": "/real_estate/properties/create_builder",
-    "title": "CREATE BUILDER PROPERTY",
+    "title": "CREATE-BUILDER PROPERTY",
     "name": "createBuilder",
     "group": "Property",
     "examples": [
@@ -1281,7 +1281,7 @@
   {
     "type": "post",
     "url": "/real_estate/properties/csv_upload?sale_type=sale&posted_by=Agent",
-    "title": "CSV UPLOAD",
+    "title": "CSV-UPLOAD",
     "name": "csvUpload",
     "group": "Property",
     "examples": [
