@@ -1325,6 +1325,32 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/real_estate/properties/delete?p_id=5fc8ff7a0ef0765102418977",
+    "title": "DELETE-PROPERTY",
+    "name": "deleteProperty",
+    "group": "Property",
+    "examples": [
+      {
+        "title": "delete:",
+        "content": "endpoint: https://myjdapi.justdial.com/real_estate/properties/delete?p_id=5fc8ff7a0ef0765102418977",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK rent\n{\n    \"results\": {\n        \"data\": {\n            \"n\": 0,\n            \"ok\": 1,\n            \"deletedCount\": 0\n        }\n    },\n    \"errors\": {\n        \"code\": 0,\n        \"msg\": \"success\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/realEstate/propertyMaster/handlers.js",
+    "groupTitle": "Property"
+  },
+  {
+    "type": "get",
     "url": "/real_estate/properties/favorite",
     "title": "GET-FAVORITES",
     "name": "getFavorite",
